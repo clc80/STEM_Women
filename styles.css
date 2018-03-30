@@ -1,0 +1,84 @@
+body {
+  background: #aeb5c5;
+  font-family: 'Libre Franklin', sans-serif;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  padding: 20px 0;
+}
+.name {
+  color: #104243;
+  font-family: 'Eczar', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+}
+.headline {
+  color: #3d4045;
+  font-family: 'Eczar', serif;
+  line-height: 1;
+}
+img {
+  border: 2px solid #14827f;
+  width: 200px;
+}
+
+.btn {
+  background-color: #14827f;
+  border: 2px solid #104243;
+  color: #3D4045;
+  width: 150px;
+  box-shadow: 0px 5px 5px #726d6a;
+  cursor: pointer;
+  margin: auto;
+}
+#btn2, .btn2 {
+  font-family: 'Eczar', serif;
+  font-weight: 700;
+  background-color: #b3a286;
+  border: 2px solid #104243;
+  color: #14827f;
+  width: 250px;
+  box-shadow: 0px 5px 5px #726d6a;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #14827f;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding: 60px 0;
+}
+.sidenav a {
+  color: #3D4045;
+  cursor:pointer;
+}
+.sidenav li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #b3a286;
+    display: block;
+    transition: 0.3s;
+    cursor:pointer;
+}
+
+.sidenav li:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor:pointer;
+}
