@@ -14,18 +14,27 @@ $(document).ready(function() {
     randomLady = Math.floor(Math.random() * ladies.results.length);
     newLady(randomLady);
   });
-  $('.lady').click(function() {
-    newLady()
-  });
+  $("li").on('click', function() {
+   var colorClass = this.className;
+   console.log(colorClass);
+});
+    /*console.log($(this).text());
+    for(var i = 0; i < (ladies.results.length); i += 1) {
+        if(ladies["results"][i].name === $(this).value) {
+            return i;
+        }
+    }
+    return -1;
+  });*/
 
   //SideNav list of all Women
-  var lady = document.querySelector(".lady");
+  var lady = document.querySelector("ul");
   var ladyNameList = "";
 
   for (i = 0; i < (ladies.results.length); i++) {
     var ladyName = ladies["results"][i].name;
 
-    ladyNameList += "<li>" + ladyName + " </li>";
+    ladyNameList += "<li class=\""+ i + "\">" + ladyName + " </li>";
   }
   lady.innerHTML = ladyNameList + "<br>";
 
