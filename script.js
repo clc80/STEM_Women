@@ -2,8 +2,7 @@ $(document).ready(function() {
 
   //make a random number between 0 and 26 for the lady to appear
   var randomLady = Math.floor(Math.random() * ladies.results.length);
-  displayLady(randomLady);
-
+  newLady(randomLady);
 
   $(".btn2").click(function() {
     openNav();
@@ -12,17 +11,11 @@ $(document).ready(function() {
     closeNav();
   });
   $('#btn2').click(function() {
-    window.location.reload();
+    randomLady = Math.floor(Math.random() * ladies.results.length);
+    newLady(randomLady);
   });
-  //Go to wikipedia page when 1st button is pushed
-  $('.wikiBtn').on('click', function(event) {
-    event.preventDefault();
-    window.open(ladies["results"][randomLady]["moreInfo"][0], '_blank');
-  });
-  //Go to info when 2nd button is pressed
-  $('.otherBtn').on('click', function(event) {
-    event.preventDefault();
-    window.open(ladies["results"][randomLady]["moreInfo"][1], '_blank');
+  $('.lady').click(function() {
+    newLady()
   });
 
   //SideNav list of all Women
@@ -36,16 +29,26 @@ $(document).ready(function() {
   }
   lady.innerHTML = ladyNameList + "<br>";
 
-  //make a random number between 0 and 26 for the lady to appear
-  var randomLady = Math.floor(Math.random() * ladies.results.length);
-  displayLady(randomLady);
   //assign the data in the page to the random lady
+function newLady(num) {
+    $('.name').html(ladies["results"][randomLady].name);
+    console.log(randomLady + " and " + ladies["results"][randomLady].name);
+    $(".headline").html(ladies["results"][randomLady].headline);
+    $(".body").html(ladies["results"][randomLady].body);
 
-  function displayLady(num) {
-    $('.name').html(ladies["results"][num].name);
-    $(".headline").html(ladies["results"][num].headline);
-    $(".body").html(ladies["results"][num].body);
+    //Go to wikipedia page when 1st button is pushed
+    $('.wikiBtn').on('click', function(event) {
+      event.preventDefault();
+      window.open(ladies["results"][randomLady]["moreInfo"][0], '_blank');
+      console.log(randomLady + " and " + ladies["results"][randomLady]["moreInfo"][0]);
+    });
+    //Go to info when 2nd button is pressed
+    $('.otherBtn').on('click', function(event) {
+      event.preventDefault();
+      window.open(ladies["results"][num]["moreInfo"][1], '_blank');
+    });
   }
+
   /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
