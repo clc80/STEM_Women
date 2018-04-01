@@ -14,7 +14,7 @@ $(document).ready(function() {
     randomLady = Math.floor(Math.random() * ladies.results.length);
     newLady(randomLady);
   });
-  $("li").on('click', function() {
+  $("ul").on('click', "li",  function() {
    var colorClass = this.className;
    console.log(colorClass);
 });
